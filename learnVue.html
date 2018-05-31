@@ -116,5 +116,53 @@
 			}
 		})
 	</script>
+
+	<div>
+		<span>选择框</span>
+		<br>
+		<div id="demo7">
+			<select v-model="selected">
+				<option disabled value="">请选择</option>
+			    <option>A</option>
+			    <option>B</option>
+			    <option>C</option>
+  			</select>
+			</select>
+			<span>Selected:{{selected}}</span>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var demo7 = new Vue({
+			el: '#demo7',
+			data:{
+				selected: ''
+			}
+		})
+	</script>
+
+	<div>
+		<div id="demo8">
+			<select v-model="selected">
+				<option v-for="item in options" v-bind:value="item.value">
+					{{item.text}}
+				</option>
+			</select>
+			<span>Selected:{{selected}}</span>
+		</div>
+
+	</div>
+	<script type="text/javascript">
+		var demo8 = new Vue({
+			el:  '#demo8',
+			data: {
+				selected:'A',
+				options:[
+					{'text':'one','value':'A'},
+					{'text':'two','value':'B'},
+					{'text':'three','value':'C'}
+				]
+			}
+		})
+	</script>
 </body>
 </html>
